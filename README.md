@@ -1,11 +1,11 @@
 # Dockerfile for FreshRSS
 
-This file is destined to configure a virtual environment for FreshRSS. It is
+This file is destined to configure a virtual environment for FreshRSS. It's
 based on Centos 6.
 
-**Please note it is only for developers or testing!**
+**Please note it's only for developers or testing!** It's assumed you know Docker and you have already install it on your computer. If it's not, please refer to [the official website](http://www.docker.com/).
 
-If you have some troubles to use this image, feel free to contact me at
+If you have troubles to use this image and **answer is NOT in this document**, feel free to contact me at
 dev@marienfressinaud.fr.
 
 
@@ -29,7 +29,7 @@ First get the Docker image on your PC:
 $ docker pull marienfressinaud/freshrss
 ```
 
-Or:
+Or if you prefer to build it yourself:
 
 ```
 $ git clone https://github.com/marienfressinaud/docker-freshrss.git docker-freshrss
@@ -89,11 +89,13 @@ the container is stopped!
 ## Configure an alias
 
 Command line to start FreshRSS container is a bit long. You can add an alias in
-your ```.bashrc```:
+your ```~/.bashrc```:
 
 ```
 alias start-freshrss='docker run -t -i -v /path/to/FreshRSS:/var/www/html -p 8080:80 marienfressinaud/freshrss'
 ```
+
+Remember to reload ```~/.bashrc``` information with ```source ~/.bashrc```.
 
 
 ### Keep container in background

@@ -1,15 +1,15 @@
 # Dockerfile for FreshRSS
 
-This file is destined to configure a virtual environment for FreshRSS. It's
+This file is destined to configure a virtual environment for FreshRSS. It is
 based on Centos 6.
 
-**Please note it's only for developers or testing!** It's assumed you know Docker and you have already install it on your computer. If it's not, please refer to [the official website](http://www.docker.com/).
+**Please note it is only for developers or testing!** It is assumed you know Docker and you have already installed it on your computer. If it's not the case, please refer to [the official website](http://www.docker.com/).
 
-If you have troubles to use this image and **answer is NOT in this document**, feel free to contact me at
+If you have any trouble using this image and if the **answer is NOT in this document**, feel free to contact me at
 dev@marienfressinaud.fr.
 
 
-## In 3 steps
+## In 3 steps:
 
 ```
 $ docker pull marienfressinaud/freshrss
@@ -17,7 +17,7 @@ $ git clone https://github.com/marienfressinaud/FreshRSS.git FreshRSS
 $ docker run -t -i -v /path/to/FreshRSS:/var/www/html -p 8080:80 marienfressinaud/freshrss
 ```
 
-In case of troubles, please refer to the rest of this document.
+In case of trouble, please refer to the rest of this document.
 
 
 ## In details
@@ -38,8 +38,8 @@ $ docker build -t marienfressinaud/freshrss docker-freshrss
 
 ### Get FreshRSS
 
-Note image does NOT include FreshRSS source code! You should first get the code
-from Github:
+Note that the image does NOT include FreshRSS source code! You should first get the code
+from GitHub:
 
 ```
 $ git clone https://github.com/marienfressinaud/FreshRSS.git FreshRSS
@@ -48,24 +48,24 @@ $ git clone https://github.com/marienfressinaud/FreshRSS.git FreshRSS
 ### Run a FreshRSS container
 
 To use FreshRSS image, you should run it and mount your local FreshRSS
-directory in the corresponding running container. Do not forgive to map port
-```8080``` (or anyone else) on port ```80```:
+directory in the corresponding running container. Do not forget to map port
+```8080``` (or any other) to port ```80```:
 
 ```
 $ docker run -t -i -v /path/to/FreshRSS:/var/www/html -p 8080:80 marienfressinaud/freshrss
 ```
 
 Now, you have access to a shell where you can do whatever you want (you have a
-root access!). In a basic usage, you should not have need of this shell. Just
+root access!). In a basic usage, you should not need this shell. Just
 keep it open and read the next section :)
 
 - apache UID is 1000 and GID is 100. Note that you can have to change these
-  values to match with owner of source code. To do that: ```usermod -u NEW_UID
+  values to match with the owner of source code. To do that: ```usermod -u NEW_UID
   -g NEW_GID apache```
 - Credentials for the MySQL database: ```root``` / ```bede```
 - You have access to FreshRSS source code in ```/var/www/html``` (be careful, if you
   change it, it is changed on the host OS too)
-- If you want to install new packages, remember you use a Centos: ```yum
+- If you want to install new packages, remember you use a CentOS: ```yum
   install``` command is your friend…
 
 
@@ -82,13 +82,13 @@ next time.
 	- Prefix: ```freshrss_```
 3. Once FreshRSS is installed, enjoy!
 
-Changements about feeds (e.g. adding a feed, refresh items) are not saved when
+Changes about feeds (e.g. adding a feed, refresh items) are not saved when
 the container is stopped!
 
 
 ## Configure an alias
 
-Command line to start FreshRSS container is a bit long. You can add an alias in
+The command line to start FreshRSS container is a bit long. You can add an alias in
 your ```~/.bashrc```:
 
 ```
